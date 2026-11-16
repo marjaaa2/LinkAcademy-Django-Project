@@ -116,34 +116,15 @@ MEDIA_ROOT = BASE_DIR / "static" / "images"
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Email configuration
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 
-# Load credentials securely from .env
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+# Email Configuration - Local Testing Only
 
-# Use Gmail SMTP when credentials are configured.
-# Otherwise, print test emails in the terminal.
-if EMAIL_HOST_USER and EMAIL_HOST_PASSWORD:
-    EMAIL_BACKEND = (
-        "django.core.mail.backends.smtp.EmailBackend"
-    )
-else:
-    EMAIL_BACKEND = (
-        "django.core.mail.backends.console.EmailBackend"
-    )
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-DEFAULT_FROM_EMAIL = (
-    EMAIL_HOST_USER or "webmaster@localhost"
-)
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
 
+DEFAULT_FROM_EMAIL = "webmaster@localhost"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
-ADMINS = (
-    [("Admin", EMAIL_HOST_USER)]
-    if EMAIL_HOST_USER
-    else []
-)
+ADMINS = []
