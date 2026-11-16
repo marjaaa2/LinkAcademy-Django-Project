@@ -87,3 +87,30 @@ Anamaria Poenaru
 Computer Science Student
 
 GitHub: [marjaaa2](https://github.com/marjaaa2)
+
+
+
+---
+
+## Project Screenshots
+
+### Homepage
+![Galaxia Coresi Homepage](screenshots/homepage.png)
+
+### Educational & Cultural Projects
+![Educational Projects](screenshots/cultural-projects.png)
+
+### Book of the Week
+![Book of the Week](screenshots/book-of-the-week.png)
+
+### Publishing Information
+![Publishing Information](screenshots/publishing.png)
+
+### Romanian Language Resources
+![Romanian Language](screenshots/romanian-language.png)
+
+### History of Coresi
+![History of Coresi](screenshots/coresi-history.png)
+
+### User Registration
+![Registration Form](screenshots/registration.png)
