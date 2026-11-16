@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .top-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 0;
+            gap: 10px;
+            width: 100%;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .top-buttons form {
+            margin: 0;
+        }
+
+        .top-buttons button {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #65a3e6;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .top-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            flex: 1; 
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px; 
+        }
+
+        .contact-info img {
+            width: 40px; 
+            height: auto;
+            margin-right: 10px; 
+            border-radius: 50%; 
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            color: white;
+            text-align: center;
+            font-size: 0.9em;
+            width: 100%;
+        }
+
+        footer a {
+            color: #ffa500; 
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline; 
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="top-buttons">
+        <form method="GET" action="{% url 'home' %}">
+            <button type="submit">Acasă</button>
+        </form>
+        <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+            <button type="submit">Proiecte educativ-culturale</button>
+        </form>
+        <form method="GET" action="{% url 'cartea_saptamanii' %}">
+            <button type="submit">Cartea săptămânii</button>
+        </form>
+        <form method="GET" action="https://www.librariacoresi.ro/">
+            <button type="submit">Librăria Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+            <button type="submit">Evaluare manuscrise</button>
+        </form>
+        <form method="GET" action="{% url 'vreau_sa_public' %}">
+            <button type="submit">Vreau să public</button>
+        </form>
+        <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+            <button type="submit">Să vorbim corect românește</button>
+        </form>
+        <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+            <button type="submit">Cine a fost Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'contact' %}">
+            <button type="submit">Contact</button>
+        </form>
+        <form method="GET" action="{% url 'signup' %}">
+            <button type="submit">Înregistrare</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h1>Contact</h1>
+
+        <p>Pentru orice întrebări sau informații suplimentare, nu ezitați să ne contactați:</p>
+
+        
+        <div class="contact-info">
+            <img src="{% static 'whatsapp_image_2024_09_15.jpg' %}" alt="Vasile Poenaru">
+            <strong>Vasile Poenaru:</strong> <a href="tel:+4078784349">+4078784349</a>
+        </div>
+
+        
+        <div class="contact-info">
+            <img src="{% static 'WhatsApp Image 2024-09-15 at 14.22.13_23365e1a.jpg' %}" alt="Michiela Poenaru">
+            <strong>Michiela Poenaru:</strong> <a href="tel:+40783033509">+40783033509</a>
+        </div>
+
+        
+        <p><strong>Telefon Anamaria Poenaru:</strong> <a href="tel:+40711073339">+40711073339</a></p>
+        <p><strong>Email:</strong> <a href="mailto:contact@galaxiacoresi.ro">contact@galaxiacoresi.ro</a></p>
+        <p><strong>Adresă:</strong> Strada Agricultori nr. 37-38, Etaj 4, Birou 403, Sector 2, București</p>
+    </div>
+
+    <!-- Footer fixat la baza paginii -->
+    <footer>
+        © 2024 Galaxia Coresi SRL, <a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a><br>
+        Design și dezvoltare: Anamaria Poenaru
+    </footer>
+</body>
+</html>

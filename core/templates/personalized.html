@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxia Coresi</title>
+    {% load static %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Raleway', sans-serif;
+            background-image: url("{% static 'WhatsApp Image 2024-09-20 at 16.57.08_871dba02.jpg' %}");
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: #000000;
+            flex-direction: column;
+        }
+
+        .content-box {
+            padding: 40px;
+            background-color: rgba(247, 247, 247, 0.8); 
+            border: 1px solid #ddd;
+            box-shadow: 0 10px 30px rgb(0, 175, 245);
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        .content-box p {
+            font-size: 1.3em;
+            color: #000000;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .content-box p:last-child {
+            font-weight: 600;
+            color: #0c0c0cc7;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .button-container button {
+            padding: 12px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #1a98b8;
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box">
+        <h1>Lectura face bine!</h1>
+        <p>Cărțile sunt ferestre către alte universuri, poțiuni magice care îți deschid mintea și sufletul. Fiecare pagină este un pas către o nouă aventură, un salt în necunoscut, unde doar imaginația ta este limita. Citește pentru a învăța, pentru a visa, pentru a te regăsi. Într-o lume agitată, cărțile sunt refugii de liniște și inspirație.</p>
+        <p>Nu ai nevoie de o baghetă magică pentru a călători prin timp sau pentru a explora colțurile cele mai îndepărtate ale lumii - tot ce îți trebuie este o carte bună. Lasă-te purtat de valul poveștilor, redescoperă bucuria lecturii și împărtășește-o cu cei din jurul tău.</p>
+        <p>Deschide o carte astăzi și lasă-te captivat de magie!</p>
+    </div>
+
+    <div class="button-container">
+        <form method="GET" action="{% url 'menu' %}">
+            <button type="submit">Vezi mai multe</button>
+        </form>
+    </div>
+</body>
+</html>

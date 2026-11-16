@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traducerea autorilor români în limba engleză</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .button-container form {
+            margin: 5px;
+        }
+
+        .button-container button {
+            padding: 10px 6px;
+            font-size: 1em;
+            color: white;
+            background-color: #65a3e6;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+            flex: 0 0 auto;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        
+        .donation-container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 5px 15px; 
+            margin-top: 90px; 
+            font-size: 0.8em; 
+            text-align: center;
+            background-color: #f0f0f0; 
+            border-left: 3px solid #007bff; 
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+            position: relative;
+            z-index: 5;
+        }
+
+        .donation-container p {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+            color: #333;
+            line-height: 1.2; 
+        }
+
+        .donation-container a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold; 
+        }
+
+        .donation-container a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            margin-top: 20px; 
+            gap: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: nowrap;
+            max-width: 70%;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 23%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            max-width: 300px;
+            width: 100%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .form-container h3 {
+            text-align: center;
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            padding: 10px;
+            font-size: 1em;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        
+        footer {
+            margin-top: 30px;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="button-container">
+        <form method="GET" action="{% url 'home' %}">
+            <button type="submit">Acasă</button>
+        </form>
+        <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+            <button type="submit">Proiecte educativ-culturale</button>
+        </form>
+        <form method="GET" action="{% url 'cartea_saptamanii' %}">
+            <button type="submit">Cartea săptămânii</button>
+        </form>
+        <form method="GET" action="https://www.librariacoresi.ro/">
+            <button type="submit">Librăria Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+            <button type="submit">Evaluare manuscrise</button>
+        </form>
+        <form method="GET" action="{% url 'vreau_sa_public' %}">
+            <button type="submit">Vreau să public</button>
+        </form>
+        <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+            <button type="submit">Să vorbim corect românește</button>
+        </form>
+        <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+            <button type="submit">Cine a fost Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'contact' %}">
+            <button type="submit">Contact</button>
+        </form>
+
+        <form method="GET" action="{% url 'signup' %}">
+            <button type="submit">Înregistrare</button>
+        </form>
+    </div>
+
+    
+    <div class="donation-container">
+        <p>Donează pentru programul editorial „Romanian Poetry Around the World”. <a href="{% url 'detalii_program' %}">Detalii aici</a></p>
+    </div>
+
+   
+    <div class="content-container">
+        <div class="image-container">
+            <img src="{% static 'WhatsApp Image 2024-07-13 at 23.11.51_9fdccab6.jpg' %}" alt="Romanian Poetry Image 1">
+            <img src="{% static 'WhatsApp Image 2024-07-13 at 23.11.50_d62c8343.jpg' %}" alt="Romanian Novels Image 1">
+            <img src="{% static 'WhatsApp Image 2024-07-13 at 23.11.49_4dcad8ab.jpg' %}" alt="Romanian Novels Image 2">
+            <img src="{% static 'WhatsApp Image 2024-07-13 at 23.11.50_a1684a87.jpg' %}" alt="Romanian Novels Image 3">
+        </div>
+
+        <div class="form-container">
+            <h3>Formular</h3> 
+            <form method="POST">
+                {% csrf_token %}
+                <label for="first_name">Nume:</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="last_name">Prenume:</label>
+                <input type="text" id="last_name" name="last_name" required>
+
+                <label for="phone">Telefon:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="amount">Vreau să donez:</label>
+                <input type="text" id="amount" name="amount" required>
+
+                <label for="currency">Monedă:</label>
+                <select id="currency" name="currency">
+                    <option value="RON">RON</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                </select>
+
+                <label for="message">Mesaj:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Trimite</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Galaxia Coresi SRL, <a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a></p>
+        <p>Design și dezvoltare: Anamaria Poenaru</p>
+    </footer>
+
+</body>
+</html>

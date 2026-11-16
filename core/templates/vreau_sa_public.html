@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vreau să public</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'WhatsApp Image 2024-09-20 at 16.55.59_355bc4e2.jpg' %}"); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 3em;
+            color: #ffffff; 
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+        }
+
+        .top-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            gap: 10px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .top-buttons form {
+            margin: 0;
+        }
+
+        .top-buttons button {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #65a3e6;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        .top-buttons button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            text-align: center;
+            max-width: 800px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            line-height: 1.8;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        footer {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            color: white;
+            text-align: center;
+            font-size: 0.9em;
+            position: fixed; 
+            bottom: 0;
+            left: 0;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+       
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+       
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="top-buttons">
+        <form method="GET" action="{% url 'home' %}">
+            <button type="submit">Acasă</button>
+        </form>
+        <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+            <button type="submit">Proiecte educativ-culturale</button>
+        </form>
+        <form method="GET" action="{% url 'cartea_saptamanii' %}">
+            <button type="submit">Cartea săptămânii</button>
+        </form>
+        <form method="GET" action="https://www.librariacoresi.ro/">
+            <button type="submit">Librăria Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+            <button type="submit">Evaluare manuscrise</button>
+        </form>
+        <form method="GET" action="{% url 'vreau_sa_public' %}">
+            <button type="submit">Vreau să public</button>
+        </form>
+        <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+            <button type="submit">Să vorbim corect românește</button>
+        </form>
+        <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+            <button type="submit">Cine a fost Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'contact' %}">
+            <button type="submit">Contact</button>
+        </form>
+        <form method="GET" action="{% url 'signup' %}">
+            <button type="submit">Înregistrare</button>
+        </form>
+    </div>
+
+    <h1>Vreau să public</h1>
+
+    <div class="content">
+        <p>Trimiteți manuscrisul în format <strong>WORD</strong> la adresa de e-mail: <strong><a href="mailto:galaxiacoresi@yahoo.com" style="color: #ffa500;">galaxiacoresi@yahoo.com</a></strong>.</p>
+        <p>Dacă se încadrează în politica noastră editorială, veți primi o ofertă de publicare.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Galaxia Coresi SRL, <a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a></p>
+        <p>Design și dezvoltare: Anamaria Poenaru</p>
+    </footer>
+</body>
+</html>

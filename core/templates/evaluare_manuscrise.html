@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluare Manuscrise</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("{% static 'WhatsApp Image 2024-09-20 at 16.56.31_0a379675.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh; 
+            width: 100%;
+        }
+
+       
+        h1 {
+            margin-top: 30px;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        
+        .top-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            gap: 10px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-buttons form {
+            margin: 0;
+        }
+
+        .top-buttons button {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #65a3e6;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-buttons button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        
+        .content {
+            text-align: left;
+            max-width: 800px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            line-height: 1.8;
+            color: #555;
+            flex: 1; 
+        }
+
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .content ul li {
+            margin-bottom: 15px;
+        }
+
+        .content strong {
+            color: #00796b;
+        }
+
+        /* Footer la bază */
+        footer {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            color: white;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: auto; 
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+       
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        body {
+            animation: fadeIn 1s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div class="top-buttons">
+            <form method="GET" action="{% url 'home' %}">
+                <button type="submit">Acasă</button>
+            </form>
+            <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+                <button type="submit">Proiecte educativ-culturale</button>
+            </form>
+            <form method="GET" action="{% url 'cartea_saptamanii' %}">
+                <button type="submit">Cartea săptămânii</button>
+            </form>
+            <form method="GET" action="https://www.librariacoresi.ro/">
+                <button type="submit">Librăria Coresi</button>
+            </form>
+            <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+                <button type="submit">Evaluare manuscrise</button>
+            </form>
+            <form method="GET" action="{% url 'vreau_sa_public' %}">
+                <button type="submit">Vreau să public</button>
+            </form>
+            <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+                <button type="submit">Să vorbim corect românește</button>
+            </form>
+            <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+                <button type="submit">Cine a fost Coresi</button>
+            </form>
+            <form method="GET" action="{% url 'contact' %}">
+                <button type="submit">Contact</button>
+            </form>
+            <form method="GET" action="{% url 'signup' %}">
+                <button type="submit">Înregistrare</button>
+            </form>
+        </div>
+
+        <h1>Evaluarea manuscriselor</h1>
+        <div class="content">
+            <p>Pentru evaluarea manuscrisului, se procedează astfel:</p>
+            <ul>
+                <li>Trimiteți manuscrisul în format <strong>Word sau PDF</strong> la adresa de e-mail <strong><a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a></strong>.</li>
+                <li>Achitați taxa de <strong>250 lei</strong> pentru evaluarea manuscrisului (indiferent de mărimea manuscrisului) în contul:</li>
+                <li><strong>Galaxia Coresi SRL: Banca Transilvania</strong><br> IBAN: <strong>RO30BTRLRONCRT0CT5659701</strong></li>
+                <li>Veți primi în <strong>10 zile</strong> o fișă de evaluare care va evidenția principalele tipuri de greșeli și sugestii de îmbunătățire a manuscrisului.</li>
+            </ul>
+        </div>
+
+        <!-- Footer la bază -->
+        <footer>
+            <p>© 2024 Galaxia Coresi SRL, <a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a></p>
+            <p>Design și dezvoltare: Anamaria Poenaru</p>
+        </footer>
+    </div>
+</body>
+</html>

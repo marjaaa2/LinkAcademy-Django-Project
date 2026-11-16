@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Înregistrare</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+
+        
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh; 
+            width: 100%;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: nowrap; 
+            justify-content: center;
+            align-items: center;
+            padding: 2px 0; 
+            gap: 7px; 
+            width: 100%;
+            overflow: hidden; 
+        }
+
+        .button-container form {
+            margin: 0;
+        }
+
+        .button-container button {
+            padding: 10px 15px; 
+            font-size: 1em; 
+            color: white;
+            background-color: #65a3e6; 
+            border: none; 
+            outline: none; 
+            cursor: pointer;
+            border-radius: 2px; 
+            transition: background-color 0.3s, transform 0.3s;
+            white-space: nowrap; 
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+            min-width: 80px;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3; 
+            transform: translateY(-1px); 
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px; 
+            flex: 1; 
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .alert {
+            color: #d9534f;
+            background-color: #f2dede;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .password-info {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .password-info ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .password-info li {
+            margin-bottom: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px; 
+            font-size: 0.9em; 
+            color: white;
+            background-color: #65a3e6; 
+            border: none; 
+            outline: none; 
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; 
+        }
+
+        footer {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            color: white;
+            text-align: center;
+            font-size: 0.8em;
+            position: absolute;
+            bottom: 0; 
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #ffa500; 
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div class="button-container">
+            <form method="GET" action="{% url 'home' %}">
+                <button type="submit">Acasă</button>
+            </form>
+            <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+                <button type="submit">Proiecte educativ-culturale</button>
+            </form>
+            <form method="GET" action="{% url 'cartea_saptamanii' %}">
+                <button type="submit">Cartea săptămânii</button>
+            </form>
+            <form method="GET" action="https://www.librariacoresi.ro/">
+                <button type="submit">Librăria Coresi</button>
+            </form>
+            <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+                <button type="submit">Evaluare manuscrise</button>
+            </form>
+            <form method="GET" action="{% url 'vreau_sa_public' %}">
+                <button type="submit">Vreau să public</button>
+            </form>
+            <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+                <button type="submit">Să vorbim corect românește</button>
+            </form>
+            <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+                <button type="submit">Cine a fost Coresi</button>
+            </form>
+            <form method="GET" action="{% url 'contact' %}">
+                <button type="submit">Contact</button>
+            </form>
+            <form method="GET" action="{% url 'signup' %}">
+                <button type="submit">Înregistrare</button>
+            </form>
+        </div>
+
+        
+        <div class="container">
+            
+            <form class="form-container" method="POST">
+                <h2>Înregistrare</h2>
+                {% csrf_token %}
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <ul>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <label for="username">Nume utilizator:</label>
+                <input type="text" name="username" id="username" required>
+
+                <label for="email">Adresa de email:</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="password1">Parolă:</label>
+                <input type="password" name="password1" id="password1" required>
+
+                
+                <div class="password-info">
+                    Parola trebuie să conțină:
+                    <ul>
+                        <li>Cel puțin 8 caractere</li>
+                        <li>Cel puțin un număr</li>
+                        <li>Cel puțin o literă mare</li>
+                        <li>Cel puțin o literă mică</li>
+                        <li>Cel puțin un caracter special (!@#$%^&*)</li>
+                    </ul>
+                </div>
+
+                <label for="password2">Confirmare parolă:</label>
+                <input type="password" name="password2" id="password2" required>
+
+                <button type="submit">Înregistrează-te</button>
+            </form>
+        </div>
+
+       
+        <footer>
+            <p>© 2024 Galaxia Coresi SRL, <a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a></p>
+            <p>Design și dezvoltare: Anamaria Poenaru</p>
+        </footer>
+    </div>
+</body>
+</html>

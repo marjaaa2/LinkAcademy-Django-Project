@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturi ușoare</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .button-container form {
+            margin: 0 5px; 
+        }
+
+
+        .button-container button {
+            padding: 10px 8px;
+            font-size: 1em; 
+            color: white;
+            background-color: #65a3e6;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px; 
+            transition: background-color 0.3s;
+            white-space: nowrap;
+            flex: 0 0 auto;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            margin-top: 90px; 
+            gap: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: nowrap;
+            max-width: 60%;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            max-width: 300px;
+            width: 100%;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .form-container h3 {
+            text-align: center;
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            text-align: left;
+            font-size: 0.9em;
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .form-container button {
+            padding: 10px; 
+            font-size: 0.9em; 
+            color: white;
+            background-color: #28a745;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        
+        .donation-text {
+            max-width: 300px;
+            background-color: #f4f8fa;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .donation-text::before {
+            content: "🌟";
+            font-size: 2em;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            opacity: 0.1;
+            transform: rotate(-30deg);
+        }
+
+        .donation-text p {
+            margin: 10px 0;
+        }
+
+        .donation-text strong {
+            font-size: 1.1em;
+            color: #007bff;
+        }
+
+        
+        footer {
+            margin-top: 30px;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="button-container">
+        <form method="GET" action="{% url 'home' %}">
+            <button type="submit">Acasă</button>
+        </form>
+        <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+            <button type="submit">Proiecte educativ-culturale</button>
+        </form>
+        <form method="GET" action="{% url 'cartea_saptamanii' %}">
+            <button type="submit">Cartea săptămânii</button>
+        </form>
+        <form method="GET" action="https://www.librariacoresi.ro/">
+            <button type="submit">Librăria Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+            <button type="submit">Evaluare manuscrise</button>
+        </form>
+        <form method="GET" action="{% url 'vreau_sa_public' %}">
+            <button type="submit">Vreau să public</button>
+        </form>
+        <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+            <button type="submit">Să vorbim corect românește</button>
+        </form>
+        <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+            <button type="submit">Cine a fost Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'contact' %}">
+            <button type="submit">Contact</button>
+        </form>
+        <form method="GET" action="{% url 'signup' %}">
+            <button type="submit">Înregistrare</button>
+        </form>
+    </div>
+
+    
+    <div class="content-container">
+        <div class="image-container">
+            <img src="{% static 'WhatsApp Image 2024-07-13 at 23.11.50_a52f18f3.jpg' %}" alt="Lecturi Ușoare Image 1">
+            <img src="{% static 'WhatsApp Image 2024-07-13 at 23.11.51_6eb11481.jpg' %}" alt="Lecturi Ușoare Image 2">
+            <img src="{% static '[978-606-996-595-5] Cine se scoală de dimineață, departe ajunge.jpeg' %}" alt="Lecturi Ușoare Image 3">
+        </div>
+
+        <div class="form-container">
+            <h3>Formular</h3> 
+            <form method="POST">
+                {% csrf_token %}
+                <label for="first_name">Nume:</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="last_name">Prenume:</label>
+                <input type="text" id="last_name" name="last_name" required>
+
+                <label for="phone">Telefon:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="amount">Vreau să donez:</label>
+                <input type="text" id="amount" name="amount" required>
+
+                <label for="currency">Monedă:</label>
+                <select id="currency" name="currency">
+                    <option value="RON">RON</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                </select>
+
+                <label for="message">Mesaj:</label>
+                <textarea id="message" name="message" rows="3"></textarea>
+
+                <button type="submit">Trimite</button>
+            </form>
+        </div>
+
+        
+        <div class="donation-text">
+            <p><strong>Donează pentru programul „Lecturi ușoare”</strong></p>
+            <p>Donațiile vor fi folosite pentru a duce cărți educative elevilor din clasele I-VIII, cărți care îi vor ajuta pe elevi să descopere bucuria lecturii, să-și dezvolte abilitățile și să evolueze frumos.</p>
+            <p>Cărțile vor fi duse în primul rând copiilor din mediile defavorizate. Prioritate vor avea copiii ai căror părinți sunt plecați în străinătate, iar ei sunt crescuți de bunici sau de rude.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Galaxia Coresi SRL, <a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a></p>
+        <p>Design și dezvoltare: Anamaria Poenaru</p>
+    </footer>
+
+</body>
+</html>

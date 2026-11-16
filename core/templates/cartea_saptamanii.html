@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartea săptămânii</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #00796b; 
+        }
+
+        .content {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .top-buttons {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 2px solid #00796b;
+        }
+
+        .top-buttons form {
+            margin: 0;
+        }
+
+        .top-buttons button {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #65a3e6;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+            flex: 0 0 auto;
+        }
+
+        .top-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .purchase-button {
+            margin-top: 20px;
+            padding: 15px 25px;
+            font-size: 1em;
+            background-color: #00796b;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .purchase-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            width: 100%;
+            background-color: #333;
+            padding: 15px 0;
+            color: white;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="top-buttons">
+        <form method="GET" action="{% url 'home' %}">
+            <button type="submit">Acasă</button>
+        </form>
+        <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+            <button type="submit">Proiecte educativ-culturale</button>
+        </form>
+        <form method="GET" action="{% url 'cartea_saptamanii' %}">
+            <button type="submit">Cartea săptămânii</button>
+        </form>
+        <form method="GET" action="https://www.librariacoresi.ro/">
+            <button type="submit">Librăria Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+            <button type="submit">Evaluare manuscrise</button>
+        </form>
+        <form method="GET" action="{% url 'vreau_sa_public' %}">
+            <button type="submit">Vreau să public</button>
+        </form>
+        <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+            <button type="submit">Să vorbim corect românește</button>
+        </form>
+        <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+            <button type="submit">Cine a fost Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'contact' %}">
+            <button type="submit">Contact</button>
+        </form>
+        <form method="GET" action="{% url 'signup' %}">
+            <button type="submit">Înregistrare</button>
+        </form>
+    </div>
+
+    
+    <div class="content">
+        <h1>Cartea săptămânii</h1>
+        <p>În această săptămână vă recomandăm romanul „Asfințit de noiembrie” de Vivien Cazan. Acest roman explorează complexitatea relațiilor umane într-o perioadă de tranziție. Cu o narațiune captivantă și personaje bine conturate, Vivien Cazan reușește să aducă în fața cititorilor o poveste plină de emoție și suspans.</p>
+        <p>Cartea poate fi procurată via acest <a href="https://www.librariacoresi.ro/shop/978-630-334-049-4-asfintit-de-noiembrie-5846?order=create_date+desc#attr=" target="_blank">link</a>.</p>
+
+        
+        <div class="image-container">
+            <img src="{% static 'WhatsApp Image 2024-09-20 at 16.37.42_5afcb593.jpg' %}" alt="Imagine coperta Asfințit de noiembrie">
+            <img src="{% static 'WhatsApp Image 2024-09-20 at 16.38.06_71e5005a.jpg' %}" alt="Imagine detalii carte Asfințit de noiembrie">
+        </div>
+
+        <!-- Buton pentru achiziție -->
+        <!-- <a href="https://www.librariacoresi.ro/shop/978-630-334-049-4-asfintit-de-noiembrie-5846?order=create_date+desc#attr=" target="_blank" class="purchase-button">Cumpără acum</a>
+    </div> -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Galaxia Coresi SRL, <a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a></p>
+        <p>Design și dezvoltare: Anamaria Poenaru</p>
+    </footer>
+</body>
+</html>

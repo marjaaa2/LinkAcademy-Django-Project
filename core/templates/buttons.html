@@ -1,0 +1,35 @@
+<div class="button-container" id="main-buttons">
+    <form method="GET" action="{% url 'home' %}">
+        <button type="submit">Acasă</button>
+    </form>
+    <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+        <button type="submit">Proiecte educativ-culturale</button>
+    </form>
+    <form method="GET" action="{% url 'cartea_saptamanii' %}">
+        <button type="submit">Cartea săptămânii</button>
+    </form>
+    <form method="GET" action="https://www.librariacoresi.ro/">
+        <button type="submit">Librăria Coresi</button>
+    </form>
+    <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+        <button type="submit">Evaluare manuscrise</button>
+    </form>
+    <form method="GET" action="{% url 'vreau_sa_public' %}">
+        <button type="submit">Vreau să public</button>
+    </form>
+    
+    <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+        <button type="submit">Să vorbim corect românește</button>
+    </form>
+    <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+        <button type="submit">Cine a fost Coresi</button>
+    </form>
+    <form method="GET" action="{% url 'contact' %}">
+        <button type="submit">Contact</button>
+    </form>
+
+    
+    <form method="GET" action="{% url 'signup' %}">
+        <button type="submit">Înregistrare</button>
+    </form>
+</div>

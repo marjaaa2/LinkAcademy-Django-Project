@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cei 7 ani de-acasă</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 30px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .button-container form {
+            margin: 5px;
+        }
+
+        .button-container button {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #65a3e6;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+       
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            gap: 30px; 
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            flex-wrap: wrap; 
+        }
+
+        .image-container {
+            max-width: 600px; 
+            width: 100%;
+            flex: 2; 
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container p {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .form-container {
+            max-width: 250px; 
+            width: 100%;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            flex: 1; 
+        }
+
+        .form-container h3 {
+            text-align: center;
+            font-size: 1em;
+            margin-bottom: 8px; 
+            color: #007bff;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            margin-bottom: 6px; 
+            font-weight: bold;
+            font-size: 0.8em; 
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container select {
+            margin-bottom: 8px; 
+            padding: 5px; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.7em; 
+        }
+
+        .form-container button {
+            padding: 6px;
+            font-size: 0.75em; 
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 8px;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .text-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: #e7f3ff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .text-container p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        
+        footer {
+            margin-top: 30px;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+   
+    <div class="button-container">
+        <form method="GET" action="{% url 'home' %}">
+            <button type="submit">Acasă</button>
+        </form>
+        <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+            <button type="submit">Proiecte educativ-culturale</button>
+        </form>
+        <form method="GET" action="{% url 'cartea_saptamanii' %}">
+            <button type="submit">Cartea săptămânii</button>
+        </form>
+        <form method="GET" action="https://www.librariacoresi.ro/">
+            <button type="submit">Librăria Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+            <button type="submit">Evaluare manuscrise</button>
+        </form>
+        <form method="GET" action="{% url 'vreau_sa_public' %}">
+            <button type="submit">Vreau să public</button>
+        </form>
+        <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+            <button type="submit">Să vorbim corect românește</button>
+        </form>
+        <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+            <button type="submit">Cine a fost Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'contact' %}">
+            <button type="submit">Contact</button>
+        </form>
+
+        <form method="GET" action="{% url 'signup' %}">
+            <button type="submit">Înregistrare</button>
+        </form>
+    </div>
+
+    
+    <div class="content-container">
+        <div class="image-container">
+            <img src="{% static 'Cei_sapte_ani_de_acasa.jpeg' %}" alt="Cei 7 ani de-acasă">
+            <p>Fiecare copil din clasele 1 și 2 primește o carte în dar. Fii tu cel care dăruiește.</p>
+        </div>
+
+        <div class="form-container">
+            <h3>Formular</h3> 
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Trimite</button>
+            </form>
+        </div>
+
+       
+        <div class="text-container">
+            
+            <p>Donează pentru programul „Cei 7 ani de acasă”. Donațiile vor fi folosite pentru a duce cartea „Cei 7 ani de acasă. Codul bunelor maniere pentru copii”, împreună cu alte cărți educative, copiilor din mediile defavorizate. Prioritate vor avea copiii ai căror părinți sunt plecați în străinătate, iar ei sunt crescuți de bunici sau de rude.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Galaxia Coresi SRL, <a href="mailto:galaxiacoresi@yahoo.com">galaxiacoresi@yahoo.com</a></p>
+        <p>Design și dezvoltare: Anamaria Poenaru</p>
+    </footer>
+
+</body>
+</html>

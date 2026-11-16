@@ -1,0 +1,46 @@
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Databases
+db.sqlite3
+*.sqlite3
+*.sqlite3-*
+
+# Logs
+*.log
+
+# Generated static files
+staticfiles/
+
+# Uploaded media
+media/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+
+
+# Secondary Django project - review separately
+/myproject/
+
+# Uploaded media
+/static/images/
+
+# WhatsApp photos - review before publishing
+/core/static/[Ww]hats[Aa]pp*
+/core/static/

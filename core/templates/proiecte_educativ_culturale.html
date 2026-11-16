@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proiecte educativ-culturale</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #e0f7fa, #ffffff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.3s ease;
+            color: #333;
+        }
+
+        
+        .top-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            margin-bottom: 30px; 
+            gap: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .top-buttons form {
+            margin: 0;
+        }
+
+        .top-buttons button {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #65a3e6;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            white-space: nowrap;
+            flex: 0 0 auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        .top-buttons button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px); 
+        }
+
+        
+        .intro-text {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            max-width: 800px;
+            line-height: 1.6; 
+            color: #00796b; 
+            font-size: 1.2em;
+        }
+
+        
+        .special-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            gap: 15px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .special-buttons form {
+            margin: 0;
+        }
+
+        .special-buttons button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 250px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+        .special-buttons button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px); 
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="top-buttons" id="top-buttons">
+        <form method="GET" action="{% url 'home' %}">
+            <button type="submit">Acasă</button>
+        </form>
+        <form method="GET" action="{% url 'proiecte_educativ_culturale' %}">
+            <button type="submit">Proiecte educativ-culturale</button>
+        </form>
+        <form method="GET" action="{% url 'cartea_saptamanii' %}">
+            <button type="submit">Cartea săptămânii</button>
+        </form>
+        <form method="GET" action="https://www.librariacoresi.ro/">
+            <button type="submit">Librăria Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'evaluare_manuscrise' %}">
+            <button type="submit">Evaluare manuscrise</button>
+        </form>
+        <form method="GET" action="{% url 'vreau_sa_public' %}">
+            <button type="submit">Vreau să public</button>
+        </form>
+        <form method="GET" action="{% url 'sa_vorbim_corect_romaneste' %}">
+            <button type="submit">Să vorbim corect românește</button>
+        </form>
+        <form method="GET" action="{% url 'cine_a_fost_coresi' %}">
+            <button type="submit">Cine a fost Coresi</button>
+        </form>
+        <form method="GET" action="{% url 'contact' %}">
+            <button type="submit">Contact</button>
+        </form>
+        <form method="GET" action="{% url 'signup' %}">
+            <button type="submit">Înregistrare</button>
+        </form>
+    </div>
+
+    
+    <div class="intro-text">
+        <p>În cadrul proiectelor noastre educativ-culturale, ne propunem să aducem în prim-plan importanța lecturii, educației și culturii în viața fiecăruia dintre noi. Fie că este vorba de promovarea literaturii române, de oferirea de suport educațional sau de traducerea autorilor, suntem dedicați să susținem aceste inițiative. Explorează proiectele noastre și implică-te în promovarea valorilor educative!</p>
+    </div>
+
+    
+    <div class="special-buttons" id="special-buttons">
+        <form method="GET" action="{% url 'cei_7_ani' %}">
+            <button type="submit">Cei 7 ani de-acasă</button>
+        </form>
+        <form method="GET" action="{% url 'lecturi_usoare' %}">
+            <button type="submit">Lecturi ușoare</button>
+        </form>
+        <form method="GET" action="{% url 'traducerea_autorilor' %}">
+            <button type="submit">Traducerea autorilor</button>
+        </form>
+    </div>
+
+</body>
+</html>
