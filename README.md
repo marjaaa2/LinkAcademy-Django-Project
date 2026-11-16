@@ -92,25 +92,73 @@ GitHub: [marjaaa2](https://github.com/marjaaa2)
 
 ---
 
+
+---
+
 ## Project Screenshots
 
-### Homepage
+Below are screenshots of the Galaxia Coresi educational Django web application, developed during my training at Link Academy.
+
+### 1. Homepage
 ![Galaxia Coresi Homepage](screenshots/homepage.png)
 
-### Educational & Cultural Projects
-![Educational Projects](screenshots/cultural-projects.png)
+### 2. Educational & Cultural Projects
+![Educational and Cultural Projects](screenshots/cultural-projects.png)
 
-### Book of the Week
+### 3. Book of the Week
 ![Book of the Week](screenshots/book-of-the-week.png)
 
-### Publishing Information
+### 4. Publishing Information
 ![Publishing Information](screenshots/publishing.png)
 
-### Romanian Language Resources
-![Romanian Language](screenshots/romanian-language.png)
+### 5. Reading Benefits
+![Reading Benefits](screenshots/reading-benefits.png)
 
-### History of Coresi
+### 6. Library Navigation
+![Library Navigation](screenshots/library-navigation.png)
+
+### 7. Manuscript Evaluation
+![Manuscript Evaluation](screenshots/manuscript-evaluation-redacted.png)
+
+### 8. Romanian Language Resources
+![Romanian Language Resources](screenshots/romanian-language.png)
+
+### 9. History of Coresi
 ![History of Coresi](screenshots/coresi-history.png)
 
-### User Registration
-![Registration Form](screenshots/registration.png)
+### 10. User Registration
+![User Registration Form](screenshots/registration.png)
+
+---
+
+## External Website Integration – ePublishers
+
+The Galaxia Coresi educational website includes links to the ePublishers online bookstore.
+
+These links allow visitors to explore books, discover recent publications, and access additional publishing-related resources.
+
+The ePublishers website is a separate external platform and is not part of the Django application's source code.
+
+### 11. ePublishers Homepage
+![ePublishers Homepage](screenshots/epublishers-homepage.png)
+
+### 12. ePublishers Book Catalog
+![ePublishers Book Catalog](screenshots/epublishers-catalog.png)
+
+### 13. ePublishers Recent Sales
+![ePublishers Recent Sales](screenshots/epublishers-recent-sales.png)
+
+### 14. ePublishers Publishing Information
+![ePublishers Publishing Information](screenshots/epublishers-publishing-info.png)
+
+---
+
+## Project Development
+
+This project helped me gain practical experience with Python, Django, HTML, CSS, website structure, templates, navigation, and version control using Git and GitHub.
+
+The application is part of my ongoing learning journey in software development and web technologies.
+
+**Developed by:** Anamaria Poenaru  
+**Training:** Link Academy  
+**Project type:** Educational Django Web Application
